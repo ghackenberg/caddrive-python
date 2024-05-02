@@ -4,16 +4,29 @@ Coming soon
 
 ## Applications
 
-### [LeoFEA](./applications/leofea/)
+This repository contains to end-user applications: **LeoFEA** and **LeoVR**.
 
-Coming soon
+### LeoFEA ([read more](./applications/leofea/))
 
+This application runs finite element simulations.
 
-### [LeoVR](./applications/leovr/)
+*Screenshot coming soon.*
+
+### LeoVR ([read more](./applications/leovr/))
+
+This application visualizes the results of finite element simulation.
 
 ![](./screenshots/finite-element-analysis.png)
 
+## Services
+
+The application use services exposing HTTP REST APIs.
+
+![](./diagrams/services.png)
+
 ## Packages
+
+The packages provide common functionality for the applications and services.
 
 * [CADdrive Python SDK](./packages/caddrive/)
 

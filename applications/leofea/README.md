@@ -1,6 +1,6 @@
 # CADdrive LeoFEA
 
-A graphical user interface for the LeoFEA service. This user interface is mostly used for testing. Maybe, we will turn it into a production-grade application at some point.
+A graphical user interface for the LeoFEA service with Qt.
 
 ## Developer guide
 
@@ -9,17 +9,17 @@ A graphical user interface for the LeoFEA service. This user interface is mostly
 External dependencies can be installed from the requirements file.
 
 ```sh
-cd <CADdrive>/applications/leofea
+cd <root>/applications/leofea
 
 pip install -r requirements.txt
 ```
 
-### Install interal dependencies
+### Install internal dependencies
 
 Internal dependencies must be installed from the source directories.
 
 ```sh
-cd <CADdrive>/packages/python
+cd <root>/packages/caddrive
 
 pip install -e .
 ```

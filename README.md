@@ -1,36 +1,54 @@
-# CADdrive Python Services
+# **CADdrive Python** Modules
 
-This repository contains the CADdrive Python Services. The services include two applications, namely LeoFEA and LeoVR, for running and visualizating finite element simulations. Furthermore, the repository contains several services for running finite element method (FEM) and computational fluid dynamics (CFD) simulations. Finally, the applications and services are based on a custom Python package providing common functionalities.
+This repository contains the **CADdrive Python Modules**. The modules include two **applications**, namely LeoFEA and LeoVR, for running and visualizating finite element simulations. Furthermore, the repository contains several **services** for running finite element method (FEM) and computational fluid dynamics (CFD) simulations. Finally, the applications and services are based on a custom Python **package** providing common functionalities.
 
-## Applications
+## ⚙ Modules
 
-This repository contains to end-user applications: **LeoFEA** and **LeoVR**.
+In this repository, we distinguish three types of modules:
 
-### LeoFEA ([read more](./applications/leofea/))
+- **Applications** for end-users.
+- **Services** for application developers.
+- **Packages** for service and application developers.
+
+### Applications
+
+This repository contains to end-user applications:
+
+- **LeoFEA** for running finite element analysis.
+- **LeoVR** for visualizing the results of finite element analysis.
+
+#### LeoFEA ([read more](./applications/leofea/))
 
 This application runs finite element simulations.
 
 *Screenshot coming soon.*
 
-### LeoVR ([read more](./applications/leovr/))
+#### LeoVR ([read more](./applications/leovr/))
 
 This application visualizes the results of finite element simulation.
 
 ![](./screenshots/finite-element-analysis.png)
 
-## Services
+### Services
 
-The application use services exposing HTTP REST APIs.
+The following diagram provides and overview of the services and their interaction.
 
 ![](./diagrams/services.png)
 
-## Packages
+Here you can read more about the individual services:
+
+* [CodeAster](./services/codeaster/)
+* [OpenFOAM](./services/openfoam/)
+* [ParaView](./services/paraview/)
+* [LeoFEA](./services/leofea/)
+
+### Packages
 
 The packages provide common functionality for the applications and services.
 
 * [CADdrive Python SDK](./packages/caddrive/)
 
-## Guides
+## 👩‍💻 Guides
 
 Install **CADdrive Python SDK** on your local computer:
 
@@ -44,7 +62,7 @@ Run the **CADdrive Python Services** with Docker:
 docker-compose up
 ```
 
-## Documents
+## 📄 Documents
 
 * [License](./LICENSE.md)
 * [Changelog](./CONTRIBUTING.md)

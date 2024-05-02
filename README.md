@@ -1,6 +1,6 @@
 # CADdrive Python Services
 
-Coming soon
+This repository contains the CADdrive Python Services. The services include two applications, namely LeoFEA and LeoVR, for running and visualizating finite element simulations. Furthermore, the repository contains several services for running finite element method (FEM) and computational fluid dynamics (CFD) simulations. Finally, the applications and services are based on a custom Python package providing common functionalities.
 
 ## Applications
 

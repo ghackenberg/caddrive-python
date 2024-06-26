@@ -11,30 +11,21 @@ RUN apt-get install libgl1 -y
 
 # Install ParaView
 WORKDIR /opt
-RUN wget https://www.paraview.org/files/v5.12/ParaView-5.12.0-RC2-osmesa-MPI-Linux-Python3.10-x86_64.tar.gz
-RUN tar xfz ParaView-5.12.0-RC2-osmesa-MPI-Linux-Python3.10-x86_64.tar.gz
-RUN ln -s ParaView-5.12.0-RC2-osmesa-MPI-Linux-Python3.10-x86_64 paraview
-RUN rm ParaView-5.12.0-RC2-osmesa-MPI-Linux-Python3.10-x86_64.tar.gz
+RUN wget https://www.paraview.org/files/v5.12/ParaView-5.12.1-osmesa-MPI-Linux-Python3.10-x86_64.tar.gz
+RUN tar xfz ParaView-5.12.1-osmesa-MPI-Linux-Python3.10-x86_64.tar.gz
+RUN ln -s ParaView-5.12.1-osmesa-MPI-Linux-Python3.10-x86_64.tar.gz paraview
+RUN rm ParaView-5.12.1-osmesa-MPI-Linux-Python3.10-x86_64.tar.gz
+
+# Install python packages
+RUN pip install flask
+RUN pip install requests-toolbelt
 
 # Make directories
 RUN mkdir /app
-RUN mkdir /app/sdk
-RUN mkdir /app/sdk/src
 RUN mkdir /out
 
-# Install APP requirements
-COPY requirements.txt /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-
-# Install SDK dependencies
-COPY --from=sdk pyproject.toml /app/sdk
-# WORKDIR /app/sdk
-# RUN pip install -e .
-
-# Install APP + SDK sources
+# Copy APP sources
 COPY src /app
-COPY --from=sdk src/caddrive /app/sdk/src
 
 # Run APP
 EXPOSE 5000/tcp

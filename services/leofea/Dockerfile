@@ -7,20 +7,19 @@ USER root
 RUN apt-get update
 RUN apt-get upgrade -y
 
+# Install python packages
+RUN pip install flask
+RUN pip install requests-toolbelt
+
 # Make directories
 RUN mkdir /app
 RUN mkdir /app/sdk
 RUN mkdir /app/sdk/src
 RUN mkdir /out
 
-# Install APP requirements
-COPY requirements.txt /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-
 # Install SDK dependencies
-COPY --from=sdk pyproject.toml /app/sdk
 WORKDIR /app/sdk
+COPY --from=sdk pyproject.toml /app/sdk
 RUN pip install -e .
 
 # Install APP + SDK sources
